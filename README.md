@@ -15,9 +15,9 @@ A modern, elegant portfolio website showcasing projects, skills, and experiences
 
 ## 🌐 **LIVE PREVIEW**
 
-[![🚀 View Live Demo](https://img.shields.io/badge/🚀_View_Live_Demo-FF6B6B?style=for-the-badge&logo=vercel&logoColor=white)](https://hazemelgindy.com/)
+[![🚀 View Live Demo](https://img.shields.io/badge/🚀_View_Live_Demo-FF6B6B?style=for-the-badge&logo=vercel&logoColor=white)](https://hazemelgindy.me/)
 
-**👉 [https://hazemelgindy.com/](https://hazemelgindy.com/) 👈**
+**👉 [https://hazemelgindy.me/](https://hazemelgindy.me/) 👈**
 
 </div>
 
@@ -174,7 +174,7 @@ npm run start
 
 *Fueled by Egyptian Songs & a Lot of Coffee*
 
-**🌐 [hazemelgindy.com](https://hazemelgindy.com)** • **[GitHub](https://github.com/therealhazem)** • **[LinkedIn](https://www.linkedin.com/in/hazemelgindy/)**
+**🌐 [hazemelgindy.me](https://hazemelgindy.me)** • **[GitHub](https://github.com/therealhazem)** • **[LinkedIn](https://www.linkedin.com/in/hazemelgindy/)**
 
 [⭐ Star this repo](https://github.com/therealhazem/Portfolio) • [🐛 Report Bug](https://github.com/therealhazem/Portfolio/issues) • [💡 Request Feature](https://github.com/therealhazem/Portfolio/issues)
 
