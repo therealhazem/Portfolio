@@ -2,16 +2,19 @@
 const nextConfig = {
   reactStrictMode: true,
 
+  // -------------------------
+  // Images config
+  // -------------------------
   images: {
     domains: ["res.cloudinary.com"],
-    unoptimized: false,
-    formats: ["image/avif", "image/webp"],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    unoptimized: true, // disables Next.js image optimization to prevent NotSupportedError
   },
 
-  productionBrowserSourceMaps: false, // Hide source maps in production
+  productionBrowserSourceMaps: false, // hide source maps
 
+  // -------------------------
+  // Security headers
+  // -------------------------
   async headers() {
     return [
       {
@@ -20,20 +23,20 @@ const nextConfig = {
           // Content Security Policy
           {
             key: "Content-Security-Policy",
-            value: `
-              default-src 'self';
-              script-src 'self';
-              style-src 'self' 'unsafe-inline';
-              img-src 'self' data: https://res.cloudinary.com;
-              font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;
-              frame-ancestors 'none';
-              connect-src 'self';
-              object-src 'none';
-            `.replace(/\n/g, " "),
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+              "img-src 'self' data: https://res.cloudinary.com",
+              "font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com",
+              "connect-src 'self'",
+              "frame-ancestors 'none'",
+              "object-src 'none'"
+            ].join("; "),
           },
-          // Clickjacking protection
+          // Prevent clickjacking
           { key: "X-Frame-Options", value: "DENY" },
-          // MIME type sniffing
+          // Prevent MIME type sniffing
           { key: "X-Content-Type-Options", value: "nosniff" },
           // Referrer policy
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
