@@ -43,6 +43,8 @@ const data2 = [
 ]
 
 
+
+
 const InfinityMarque = () => {
     const [gradwidth, setgradwidth] = useState(330);
 
