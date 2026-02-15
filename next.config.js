@@ -28,10 +28,13 @@ const nextConfig = {
               "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "img-src 'self' data: https://res.cloudinary.com",
+              "media-src 'self' https://res.cloudinary.com",
               "font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com",
-              "connect-src 'self'",
+              "connect-src 'self' https://res.cloudinary.com",
               "frame-ancestors 'none'",
-              "object-src 'none'"
+              "object-src 'none'",
+              "base-uri 'self'",
+              "form-action 'self'"
             ].join("; "),
           },
           // Prevent clickjacking
@@ -40,11 +43,13 @@ const nextConfig = {
           { key: "X-Content-Type-Options", value: "nosniff" },
           // Referrer policy
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-          // Permissions policy
+          // Permissions policy (autoplay allowed for muted hover videos)
           {
             key: "Permissions-Policy",
-            value: "camera=(), microphone=(), geolocation=(), fullscreen=(self)",
+            value: "camera=(), microphone=(), geolocation=(), fullscreen=(self), autoplay=(self)",
           },
+          // Disable DNS prefetch control (optional; remove if you use many external domains)
+          { key: "X-DNS-Prefetch-Control", value: "on" },
           // HSTS
           {
             key: "Strict-Transport-Security",

@@ -1,26 +1,30 @@
 'use client'
 
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback } from "react";
 import Image from "next/image";
 
 const WorkCard = ({ img, title, desc, live, code, vid }) => {
     const [hover, setHover] = useState(false);
     const videoRef = useRef(null);
 
-    const handleMouseEnter = () => {
+    const handleMouseEnter = useCallback(() => {
         setHover(true);
-        if (videoRef.current) {
-            videoRef.current.currentTime = 0;
-            videoRef.current.play();
+        const video = videoRef.current;
+        if (video) {
+            video.currentTime = 0;
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {});
+            }
         }
-    };
+    }, []);
 
-    const handleMouseLeave = () => {
+    const handleMouseLeave = useCallback(() => {
         setHover(false);
         if (videoRef.current) {
             videoRef.current.pause();
         }
-    };
+    }, []);
 
     return (
         <div
@@ -46,14 +50,14 @@ const WorkCard = ({ img, title, desc, live, code, vid }) => {
                         sizes="(max-width: 768px) 100vw, 37vw"
                     />
                     
-                    {/* Video - overlays on hover */}
+                    {/* Video - overlays on hover (preload=metadata for performance) */}
                     <video
                         ref={videoRef}
                         src={vid}
                         muted
                         loop
                         playsInline
-                        preload="auto"
+                        preload="metadata"
                         className={`max-md:rounded-2xl rounded-3xl w-full h-full object-cover absolute inset-0 transition-opacity duration-300 ${
                             hover ? "opacity-100" : "opacity-0"
                         }`}

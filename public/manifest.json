@@ -1,0 +1,17 @@
+{
+  "name": "Hazem Elgindy | Software Engineer",
+  "short_name": "Hazem Elgindy",
+  "description": "Software Engineer & Computer Science student. Portfolio showcasing web development with Next.js, React, TypeScript.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/images/Logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

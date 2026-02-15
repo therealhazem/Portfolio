@@ -17,10 +17,18 @@ const scaleIn = {
 
 const projects = [
     {
+        title: "ARQA Medical Website",
+        img: "/videos/ARQA Website.png",
+        vid: "https://res.cloudinary.com/dcpyxsfh2/video/upload/v1771192813/ARQA_Website_Video_jnu6he.mp4",
+        desc: "Engineered and led the development of ARQA Medical’s official website from the ground up, architecting a scalable Next.js platform with TypeScript, Tailwind CSS, and a live Sanity CMS. Built dynamic systems for product management and content updates, while owning UI/UX, performance, SEO, and deployment.",
+        live: "https://arqa-website.vercel.app/",
+        code: "https://github.com/therealhazem/ARQA-Website",
+    },
+    {
         title: "Dashyboard",
         img: "/videos/Dashyboard.png",
         vid: "https://res.cloudinary.com/dkesm0hn8/video/upload/v1763254000/Dashyboard_Video_agcg78.mp4",
-        desc: "Developed a customizable admin and analytics dashboard with Next.js, Tailwind, and ShadCN. It features a responsive sidebar, charts, tables, forms, and theme toggling built with reusable components. This project demonstrates my skills in dashboard architecture and clean, component-driven UI development.",
+        desc: "Developed a customizable admin and analytics dashboard using Next.js, Tailwind, and ShadCN. It includes a responsive sidebar, charts, tables, forms, and theme toggling, built with reusable components to demonstrate clean, scalable dashboard architecture and UI development.",
         live: "https://dashyboard.vercel.app/",
         code: "https://github.com/therealhazem/Dashyboard",
     },
@@ -47,14 +55,6 @@ const projects = [
         desc: "Designed and developed a mobile-focused, high-conversion landing page for a SaaS company. It features an elegant, dynamic layout combined with a clean, modern aesthetic crafted to capture user attention and boost engagement through smooth, intuitive interaction.",
         live: "https://xorasass.netlify.app/",
         code: "https://github.com/therealhazem/XORA.git",
-    },
-    {
-        title: "Assembly EndGame",
-        img: "/videos/Assembly.png",
-        vid: "https://res.cloudinary.com/dkesm0hn8/video/upload/v1763252768/Assembly_Video_ohegbt.mp4",
-        desc: "Created a React word-guessing game with 8 attempts per word, featuring confetti on correct guesses and letter reveals on wrong ones. Built with modular components and accessibility in mind, this project highlights my understanding of React fundamentals and component design.",
-        live: "https://hazemandassemblyendgame.netlify.app/",
-        code: "https://github.com/therealhazem/Assembly-EndGame.git",
     },
     {
         title: "HazemBook",

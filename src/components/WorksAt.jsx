@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link';
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -37,13 +38,17 @@ const WorksAt = () => {
                     Where i spread my magic now
                 </motion.h4>
             </motion.div>
-            <motion.img
-                src="/images/ARQA.png"
-                className="lg:max-w-[20vw] max-w-[50vw]"
-                alt="ARQA Logo"
-                variants={scaleIn}
-                transition={{ delay: 0.4, ease: "easeOut" }}
-            />
+            <motion.div>
+                <Link href="https://arqa-website.vercel.app/">
+                    <motion.img
+                        src="/images/ARQA.png"
+                        className="lg:max-w-[20vw] max-w-[50vw]"
+                        alt="ARQA Logo"
+                        variants={scaleIn}
+                        transition={{ delay: 0.4, ease: "easeOut" }}
+                    />
+                </Link>
+            </motion.div>
         </motion.div>
     )
 }
